@@ -17,20 +17,16 @@ print(data.shape)
 # Display first five rows
 print(data.head())
 
-# Drop unnecessary Id column
 data = data.drop('Id', axis=1)
 
-# Split features and target
 X = data.iloc[:, :-1]
 y = data.iloc[:, -1]
 
 print("Shape of X is %s and shape of y is %s" % (X.shape, y.shape))
 
-# Count unique species
 total_classes = y.nunique()
 print("Number of unique species in dataset are:", total_classes)
 
-# Display class distribution
 distribution = y.value_counts()
 print(distribution)
 
